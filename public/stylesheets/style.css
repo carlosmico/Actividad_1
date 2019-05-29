@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    all: unset;
+    padding: 0.3em;
+    color: #141939;
+    background-color: yellow;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+input {
+    padding: 0.4em;
+}
+
+::selection {
+    background-color: yellow;
+}
+
+
+/* === NAV BAR === */
+
+nav {
+    background-image: url("/images/nathan-anderson-316188-unsplash.jpg");
+}
+
+nav>* {
+    padding: 1em;
+}
+
+.iconWeb {
+    width: 160px;
+    height: 100px;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navBarMenu {
+    justify-content: center;
+}
+
+.navbar-toggler {
+    position: absolute;
+    right: 30px;
+    top: 50px;
+    background-color: yellow;
+}
+
+.navbar-collapse {
+    width: 100%;
+}
+
+.navbar-nav a {
+    font-size: 1.3em;
+    font-style: italic;
+    color: white !important;
+}
+
+.navbar-nav a:hover {
+    color: yellow !important;
+}
+
+.socialIcon {
+    width: 45px;
+    height: 45px;
+}
+
+.socialIcon:hover {
+    border: 3px yellow solid;
+    border-radius: 50px;
+}
+
+@media (max-width: 992px) {
+    .socialLinks {
+        display: none;
+    }
+    .navbar-collapse {
+        background-color: #141939;
+        width: 100%;
+    }
+}
+
+
+/* === INDEX === */
+
+.headerViaja {
+    top: 0;
+    height: 400px;
+    background-image: url("/images/nathan-anderson-316188-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerViajaContent {
+    position: relative;
+}
+
+.headerViajaContent>h1 {
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.headerViajaContent>h2 {
+    color: white;
+}
+
+.destinations {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.destinations .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+}
+
+.destination {
+    margin: 2em;
+    position: relative;
+}
+
+.destination>div:nth-child(2) {
+    text-align: center;
+}
+
+.destination> :not(:nth-child(2)) {
+    font-weight: bold;
+}
+
+.savePrice {
+    height: 50px;
+    background-color: #141939;
+    color: white;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.price {
+    width: 85px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    position: absolute;
+    right: 0;
+    z-index: 3;
+}
+
+.price>p {
+    margin: 0;
+}
+
+.destination img {
+    width: 350px;
+    height: 300px;
+}
+
+
+/* === FOOTER === */
+
+footer {
+    background-color: #141939;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    color: white;
+    padding: 1em;
+}
+
+.footerContent {
+    display: flex;
+    font-size: 1.1em;
+    justify-content: center;
+}
+
+.footerContent>* {
+    padding: 2em;
+    position: relative;
+}
+
+.footerContent>div>p:first-child {
+    font-size: 1.3em;
+}
+
+.footerHelp> :nth-child(2) {
+    margin: 0;
+    margin-left: 1em;
+}
+
+.footerHelp> :nth-child(3) {
+    margin: 0;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+.footerHelp> :nth-child(4) {
+    font-size: 0.8em;
+}
+
+.footerInfo li {
+    list-style-type: none;
+}
+
+.footerInfo li a:hover {
+    color: yellow;
+}
+
+.footerInfo li a {
+    color: white;
+}
+
+.footerNewsletter> :nth-child(2) {
+    display: block;
+    width: 80%;
+}
+
+.footerNewsletter> :nth-child(3) {
+    margin-top: 1em;
+}
+
+.footerCopyright {
+    text-align: center;
+    padding-top: 2em;
+    font-size: 0.8em;
+}
+
+.footerSeparator {
+    height: 1px;
+    background-color: black;
+}
