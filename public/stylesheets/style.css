@@ -40,12 +40,6 @@ main {
 
 /* === NAV BAR === */
 
-nav {
-    background-image: url(/images/nathan-anderson-316188-unsplash.jpg);
-    background-size: cover;
-    background-color: #0380a0;
-}
-
 nav>* {
     padding: 1em;
     padding-left: 5em;
@@ -58,6 +52,7 @@ nav>* {
 
 .navbar {
     padding: 0;
+    background-color: #141939;
 }
 
 .navBarMenu {
@@ -69,6 +64,7 @@ nav>* {
     right: 30px;
     top: 30px;
     background-color: #0279a4;
+    border-radius: 0 !important;
 }
 
 .navbar-collapse {
@@ -100,12 +96,21 @@ nav>* {
         display: none;
     }
     .navbar-collapse {
-        background-color: #141939;
-        width: 100vw;
+        background-color: #0c8eb3;
+        opacity: 0.9;
+        position: fixed;
+        width: 300px;
+        z-index: -1;
+        padding-top: 22em;
+        right: 0px;
+    }
+    .nav-item {
+        margin-bottom: 1em;
     }
 }
 
 section {
+    position: relative;
     width: 100%;
     padding-top: 3em;
     padding-left: 10em;
@@ -140,6 +145,26 @@ section:nth-child(3) {}
     flex-direction: column;
 }
 
+#carouselExampleIndicators {
+    display: none;
+}
+
+@media(max-width: 992px) {
+    .headerViaja {
+        padding: 0;
+        height: unset;
+    }
+    .headerViajaContent {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    #carouselExampleIndicators {
+        display: block;
+    }
+}
+
 .headerViajaContent>h1 {
     color: white;
     font-size: 3em;
@@ -162,6 +187,10 @@ section:nth-child(3) {}
     position: relative;
 }
 
+#carouselExampleControls {
+    display: none;
+}
+
 .destinations .grid {
     /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -170,6 +199,32 @@ section:nth-child(3) {}
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
+}
+
+@media(max-width: 992px) {
+    .destination {
+        width: 100%;
+    }
+    #carouselExampleControls {
+        display: block;
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        opacity: 1;
+    }
+    .carousel-control-prev-icon {
+        background-image: url("/images/prev-icon.png");
+        width: 5em;
+        height: 5em;
+    }
+    .carousel-control-next-icon {
+        background-image: url("/images/next-icon.png");
+        width: 5em;
+        height: 5em;
+    }
+    .destinations .grid {
+        display: none;
+    }
 }
 
 .destination {
@@ -233,7 +288,7 @@ section:nth-child(3) {}
 /* About Us */
 
 .aboutus {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/quienes.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/quienes.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -241,6 +296,14 @@ section:nth-child(3) {}
     position: relative;
     display: flex;
     align-items: center;
+}
+
+@media(max-width: 992px) {
+    .aboutus {
+        background-image: NONE;
+        background-color: #b1d7e2;
+        justify-content: center;
+    }
 }
 
 .aboutusContent {
@@ -288,6 +351,12 @@ section:nth-child(3) {}
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+@media(max-width: 992px) {
+    .contact {
+        display: none;
+    }
 }
 
 .contact>* {
@@ -343,8 +412,37 @@ footer {
 
 .footerContent {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     font-size: 1.1em;
     justify-content: center;
+}
+
+.footerSocialLinks {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .footerContent {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 1.1em;
+        align-items: center;
+    }
+    .footerInfo {
+        display: none;
+    }
+    .footerSocialLinks {
+        display: block;
+    }
+    .footerSeparator {
+        display: none;
+    }
+    .footerCopyright {
+        display: none;
+    }
 }
 
 .footerContent>* {
@@ -385,7 +483,7 @@ footer {
 
 .footerNewsletter> :nth-child(2) {
     display: block;
-    width: 80%;
+    width: 15em;
 }
 
 .footerNewsletter> :nth-child(3) {
