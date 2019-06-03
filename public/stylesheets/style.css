@@ -55,6 +55,12 @@ nav>* {
     background-color: #141939;
 }
 
+@media(max-width: 992px) {
+    .navbar {
+        background-color: #141939;
+    }
+}
+
 .navBarMenu {
     justify-content: center;
 }
@@ -101,11 +107,14 @@ nav>* {
         position: fixed;
         width: 300px;
         z-index: -1;
-        padding-top: 22em;
+        padding-top: 28em;
         right: 0px;
     }
     .nav-item {
         margin-bottom: 1em;
+    }
+    .navbar-nav a.register {
+        margin-top: 2em;
     }
 }
 
@@ -117,8 +126,6 @@ section {
     padding-right: 10em;
     padding-bottom: 3em;
 }
-
-section:nth-child(3) {}
 
 
 /* === INDEX === */
@@ -396,6 +403,45 @@ section:nth-child(3) {}
 .contactForm>button {
     margin-top: 1em;
     font-style: italic;
+}
+
+
+/* === REGISTER === */
+
+.registerSection {
+    background-image: url('/images/airport.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.registerForm {
+    background-color: #141939a1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    border-radius: 15px;
+    color: white;
+}
+
+.registerForm>* {
+    margin: 1em;
+}
+
+.registerForm>input {
+    width: 270px;
+}
+
+.registerForm>p {
+    display: none;
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+}
+
+.registerForm>button {
+    align-self: center;
 }
 
 
