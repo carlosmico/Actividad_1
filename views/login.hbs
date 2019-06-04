@@ -1,0 +1,12 @@
+<section class="loginSection">
+    <form class="loginForm" action="/users/signin" method="POST">
+        <input type="text" name="email" id="email" placeholder="Email" required="true">
+        <input type="password" name="password" id="password" placeholder="Contraseña">
+    
+        <button id="submitLogin" type="submit">Iniciar sesión</button>
+
+        <p class="warmMessage">{{notify}}</p>
+
+        <a href="/register">Registrarme</a>
+    </form>
+</section>

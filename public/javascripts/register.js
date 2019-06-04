@@ -5,7 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const passwordConfirm = document.getElementById('passwordConfirm');
 
     let submitRegisterBtn = document.getElementById('submitRegister');
-    submitRegisterBtn.style.display = "none";
+
+    submitRegisterBtn.disabled = true;
+
+    password.addEventListener("keyup", (event) => {
+        let password1 = password.value;
+        let password2 = passwordConfirm.value;
+
+        let passwordWarning = document.getElementById('passwordWarning');
+
+
+        if (password1 === password2) {
+            passwordWarning.style.display = "none";
+
+            submitRegisterBtn.disabled = false;
+        } else {
+            passwordWarning.style.display = "block";
+
+            submitRegisterBtn.disabled = true;
+        }
+    });
 
     passwordConfirm.addEventListener("keyup", (event) => {
         let password1 = password.value;
@@ -16,11 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (password1 === password2) {
             passwordWarning.style.display = "none";
-            submitRegisterBtn.style.display = "block";
 
+            submitRegisterBtn.disabled = false;
         } else {
             passwordWarning.style.display = "block";
-            submitRegisterBtn.style.display = "none";
+
+            submitRegisterBtn.disabled = true;
         }
     });
 });

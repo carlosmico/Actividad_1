@@ -20,6 +20,12 @@ button {
     background-color: yellow;
     font-size: 1.2em;
     cursor: pointer;
+    border-radius: 10px;
+    border-bottom: 3.5px solid #FFC107;
+}
+
+button:hover {
+    background-color: #f5de11;
 }
 
 input {
@@ -87,6 +93,10 @@ nav>* {
     color: yellow !important;
 }
 
+.navbar-nav a.login img {
+    width: 50px;
+}
+
 .socialIcon {
     width: 45px;
     height: 45px;
@@ -112,9 +122,6 @@ nav>* {
     }
     .nav-item {
         margin-bottom: 1em;
-    }
-    .navbar-nav a.register {
-        margin-top: 2em;
     }
 }
 
@@ -348,6 +355,7 @@ section {
     background-color: #141939;
     color: yellow;
     align-self: center;
+    border-bottom: 3.5px solid #293373;
 }
 
 
@@ -430,7 +438,8 @@ section {
 }
 
 .registerForm>input {
-    width: 270px;
+    width: 80%;
+    max-width: 300px;
 }
 
 .registerForm>p {
@@ -442,6 +451,48 @@ section {
 
 .registerForm>button {
     align-self: center;
+}
+
+
+/* === LOGIN ===*/
+
+.loginSection {
+    background-image: url('/images/airport.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.loginForm {
+    background-color: #141939a1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    border-radius: 15px;
+    color: white;
+}
+
+.loginForm>* {
+    margin: 1em;
+}
+
+.loginForm>input {
+    width: 80%;
+    max-width: 300px;
+}
+
+.loginForm>button {
+    align-self: center;
+}
+
+.loginForm>a {
+    color: white;
+    font-size: 1.1em;
+}
+
+.warmMessage {
+    color: red;
 }
 
 
@@ -465,7 +516,10 @@ footer {
 }
 
 .footerSocialLinks {
-    display: none;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin-bottom: 1em;
 }
 
 @media (max-width: 992px) {
@@ -479,9 +533,6 @@ footer {
     }
     .footerInfo {
         display: none;
-    }
-    .footerSocialLinks {
-        display: block;
     }
     .footerSeparator {
         display: none;
