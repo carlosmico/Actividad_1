@@ -11,10 +11,10 @@ router.get('/login', function(req, res, next) {
     res.render('login.hbs', { title: 'Express' });
 });
 
-/* GET register page */
-router.get('/register', function(req, res, next) {
-    res.render('register.hbs', { title: 'Express' });
-});
+// /* GET register page */
+// router.get('/register', function(req, res, next) {
+//     res.render('register.hbs', { title: 'Express' });
+// });
 
 router.get('/test', function(req, res, next) {
     res.send("Esta es la respuesta de una prueba!");

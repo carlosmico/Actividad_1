@@ -1,0 +1,9 @@
+<section class="emailRecoverySection">
+    <form class="emailRecoveryForm" action="/users/sendTokenRecovery" method="POST">
+        <input type="text" name="email" id="email" placeholder="Introduce email" required="true">
+        
+        <p class="recoveryErr">{{recoveryErr}}</p>
+
+        <button id="submitEmailRecovery" type="submit">Recuperar contraseña</button>
+    </form>
+</section>

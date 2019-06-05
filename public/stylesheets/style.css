@@ -20,8 +20,6 @@ button {
     background-color: yellow;
     font-size: 1.2em;
     cursor: pointer;
-    border-radius: 10px;
-    border-bottom: 3.5px solid #FFC107;
 }
 
 button:hover {
@@ -93,6 +91,10 @@ nav>* {
     color: yellow !important;
 }
 
+.navbar-nav a.login:nth-child(4) {
+    display: none;
+}
+
 .navbar-nav a.login img {
     width: 50px;
 }
@@ -122,6 +124,9 @@ nav>* {
     }
     .nav-item {
         margin-bottom: 1em;
+    }
+    .navbar-nav a.login:nth-child(4) {
+        display: block;
     }
 }
 
@@ -355,7 +360,6 @@ section {
     background-color: #141939;
     color: yellow;
     align-self: center;
-    border-bottom: 3.5px solid #293373;
 }
 
 
@@ -442,8 +446,11 @@ section {
     max-width: 300px;
 }
 
-.registerForm>p {
+.registerForm>p:nth-child(5) {
     display: none;
+}
+
+.registerForm>p {
     font-weight: bold;
     font-style: italic;
     color: red;
@@ -493,6 +500,109 @@ section {
 
 .warmMessage {
     color: red;
+    font-weight: bolder;
+}
+
+
+/* === User Control Panel === */
+
+.userControlPanel {
+    background-image: url(/images/controlpanel.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.userControlPanel div {
+    background-color: #0c1443b8;
+    color: white;
+    display: inline-block;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+
+/* === Email Recovery ===*/
+
+.emailRecoverySection {
+    background-image: url('/images/airport.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.emailRecoveryForm {
+    background-color: #141939a1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    border-radius: 15px;
+    color: white;
+}
+
+.emailRecoveryForm>* {
+    margin: 1em;
+}
+
+.emailRecoveryForm>input {
+    width: 80%;
+    max-width: 300px;
+}
+
+.emailRecoveryForm>button {
+    align-self: center;
+}
+
+.emailRecoveryForm>a {
+    color: white;
+    font-size: 1.1em;
+}
+
+#recoveryWarning {
+    display: none;
+    color: red;
+}
+
+.recoveryErr {
+    color: red;
+}
+
+
+/* === Password Recovery ===*/
+
+.passwordRecoverySection {
+    background-image: url('/images/airport.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.passwordRecoveryForm {
+    background-color: #141939a1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    border-radius: 15px;
+    color: white;
+}
+
+.passwordRecoveryForm>* {
+    margin: 1em;
+}
+
+.passwordRecoveryForm>input {
+    width: 80%;
+    max-width: 300px;
+}
+
+.passwordRecoveryForm>button {
+    align-self: center;
+}
+
+.passwordRecoveryForm>a {
+    color: white;
+    font-size: 1.1em;
 }
 
 

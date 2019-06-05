@@ -1,11 +1,11 @@
 <section class="registerSection">
-    <form class="registerForm" action="users/signup" method="POST">
+    <form class="registerForm" action="signup" method="POST">
         <input type="text" name="username" id="username" placeholder="Usuario" required="true">
         <input type="text" name="email" id="email" placeholder="Email" required="true">
-        <input type="password" name="password" id="password" placeholder="Contraseña" required="true">
-        <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar contraseña" required="true">
+        <input type="password" name="password" id="password" placeholder="Contraseña" required="true" minlength="8">
+        <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar contraseña" required="true" minlength="8">
         <p id="passwordWarning">Las contraseñas introducidas no coinciden.</p>
-        <p>{{log registerErr}}</p>
+        <p>{{registerErr}}</p>
         <label><input type="checkbox" name="privacy" id="privacy" required="true">&nbsp&nbspAcepto los términos y condiciones, así como la política de privacidad.</label>
         <button id="submitRegister" type="submit">Registrarme</button>
     </form>
