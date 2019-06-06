@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+const fs = require('fs')
 const mongoose = require('../backend/app');
 const User = require('../backend/models/user');
 const nodemail = require('../config/nodemailer');
@@ -195,9 +196,29 @@ router.get('/userControlPanel/:_id', function(req, res) {
 router.post('/userControlPanel/uploadAvatar', uploadPics.single('avatar'), (req, res) => {
     const _id = req.headers.referer.split("userControlPanel/")[1];
 
-    User.findByIdAndUpdate(_id, { avatar: req.file.filename }).then(user => {
-        res.redirect(`/users/userControlPanel/${_id}`);
-    }).catch(console.log);
+    User.findById(_id).then(user => {
+
+        //Eliminamos la foto de perfil antigua para liberar espacio
+        let oldProfilePic = user.avatar;
+
+        try {
+            fs.unlinkSync(`./public/uploads/profilePics/${oldProfilePic}`);
+        } catch (error) {
+            console.log(error);
+        }
+
+        //Asignamos al usuario la nueva foto de perfil
+        user.avatar = req.file.filename;
+
+        user.save().then(user => {
+            res.redirect(`/users/userControlPanel/${_id}`);
+        }).catch(console.log);
+    });
+
+
+    // User.findByIdAndUpdate(_id, { avatar: req.file.filename }).then(user => {
+    //     res.redirect(`/users/userControlPanel/${_id}`);
+    // }).catch(console.log);
 });
 
 module.exports = router;
