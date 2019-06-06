@@ -1,0 +1,17 @@
+<section class="userControlPanel">
+    <div>
+        <img src="{{avatar}}" alt="Profile Pic">
+        <p>Usuario: <span>{{username}}</span></p>
+        <p>Email: <span>{{email}}</span></p>
+        <p>Fecha de creación: <span>{{creationDate}}</span></p>
+    </div>
+
+    <div>
+        <p>Actualizar foto de perfil</p>
+
+        <form action="/users/userControlPanel/uploadAvatar" method="POST" enctype="multipart/form-data">
+            <input type="file" name="avatar" required/>
+            <input type="submit" value="Actualizar" class="submit">
+        </form>
+    </div>
+</section>

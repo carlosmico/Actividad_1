@@ -130,6 +130,17 @@ nav>* {
     }
 }
 
+.submit {
+    all: unset;
+    align-self: center;
+    padding: 0.3em;
+    margin-top: 1em;
+    color: #141939;
+    background-color: yellow;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
 section {
     position: relative;
     width: 100%;
@@ -510,6 +521,9 @@ section {
     background-image: url(/images/controlpanel.jpeg);
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 .userControlPanel div {
@@ -518,6 +532,28 @@ section {
     display: inline-block;
     padding: 1em;
     border-radius: 10px;
+    margin: 1em;
+}
+
+.userControlPanel>div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userControlPanel>div:first-child>p:nth-child(2) {
+    margin-top: 2em;
+}
+
+.userControlPanel>div:first-child>img {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+}
+
+.userControlPanel>div:nth-child(2)>form {
+    display: flex;
+    flex-direction: column;
 }
 
 

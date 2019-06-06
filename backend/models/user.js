@@ -34,6 +34,7 @@ const userSchema = new mongoose.Schema({
         minlength: 8
     },
     confirmedEmail: Boolean,
+    avatar: String
 }, { timestamps: true });
 
 //Esta función se ejecutará antes del save() del usuario y encriptará su password

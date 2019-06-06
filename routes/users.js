@@ -9,6 +9,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const SECRET_JWT = require('../config/password').SECRET_JWT;
 
+const uploadPics = require('../config/multer');
+
 var signupErrCode;
 
 /* Save new User. */
@@ -170,7 +172,7 @@ router.post('/signin', function(req, res, next) {
                     const token = user.generateAuthToken(); //calls the method generateAuthToken from the UserModel
                     user['token'] = token; //here we create a user property which is going to contain the generated token
                     //res.json(user); // if both the username/email and the password are correct, it responds with the user as a json.
-                    res.redirect(`/users/welcome/${user._id}`);
+                    res.redirect(`/users/userControlPanel/${user._id}`);
                 } else {
                     res.render('login', { notify: "Contraseña incorrecta" });
                 }
@@ -179,14 +181,23 @@ router.post('/signin', function(req, res, next) {
     }).catch(console.log);
 });
 
-router.get('/welcome/:_id', function(req, res) {
+router.get('/userControlPanel/:_id', function(req, res) {
     const user = User.findById(req.params._id).then(user => {
-        res.render("welcome.hbs", {
+        res.render("userControlPanel.hbs", {
+            avatar: `/uploads/profilePics/${user.avatar}`,
             username: user.username,
             email: user.email,
             creationDate: user.createdAt
         });
     });
+});
+
+router.post('/userControlPanel/uploadAvatar', uploadPics.single('avatar'), (req, res) => {
+    const _id = req.headers.referer.split("userControlPanel/")[1];
+
+    User.findByIdAndUpdate(_id, { avatar: req.file.filename }).then(user => {
+        res.redirect(`/users/userControlPanel/${_id}`);
+    }).catch(console.log);
 });
 
 module.exports = router;
